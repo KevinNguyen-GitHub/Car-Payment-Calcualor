@@ -21,7 +21,7 @@ A simple React application to calculate your monthly and annual car payments, in
 1. **Clone the repo**  
    ```bash
    git clone https://github.com/yourusername/car-payment-estimator.git
-   cd car-payment-estimator
+   cd car-payment-calculator
 
 2. **Install dependencies**
     ```bash
