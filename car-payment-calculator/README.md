@@ -24,7 +24,9 @@ A simple React application to calculate your monthly and annual car payments, in
    cd car-payment-estimator
 
 2. **Install dependencies**
+    ```bash
     npm install
 
 3. **Run in development**
+    ```bash
     npm run dev
