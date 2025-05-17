@@ -1,0 +1,147 @@
+:root {
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --surface-alt: #2c2c2c;
+  --fg: #f0f0f0;
+  --accent: #007bff;
+  --accent-hover: #0056b3;
+  --border: #555;
+  --shadow: rgba(0, 0, 0, 0.6);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Center all content in the viewport */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
+  background: var(--bg);
+}
+
+.page-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: auto;
+}
+
+/* Constrain card width and center it */
+.card {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 2rem;
+  color: var(--fg);
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  gap: 1.25rem;
+}
+
+/* wrap the three fee inputs together */
+.fees-group {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* make full-width rows span both columns */
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--fg);
+  width: 100%;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+.toggle-button:hover {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+.toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.toggle-button {
+  flex: 1;
+  min-width: 100px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--fg);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.toggle-button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.toggle-button span,
+.toggle-button small {
+  display: block;
+}
+.toggle-button small {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal-content {
+  background: var(--surface);
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  width: 90%;
+}
